@@ -21,7 +21,7 @@ function App() {
   
 
   const setInputfunc = (e)=>{
-    console.log(e.target.value);
+    
     setInput(e.target.value);
     
     if(e.target.value === ""){
@@ -34,14 +34,11 @@ function App() {
   const fetchData = (e) => {
     setLoad(true);
     if(e)e.preventDefault();
-    console.log("fetching data");
     fetch(`https://pokeapi.co/api/v2/pokemon/${inpt}`).then((res) => res.json()).then((data) => {
-      console.log(data);
       setRes(data);  
       setLoad(false);
     }
     ).catch((err) => {
-      console.log(err);
       setErr(err); 
       setLoad(false); 
     });
@@ -49,7 +46,6 @@ function App() {
 }
 
   const setInitial = () => {
-    console.log("setting initial");
     setInput("");
     SetButton(true);
     setRes(null);
