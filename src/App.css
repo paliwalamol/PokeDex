@@ -52,7 +52,7 @@
   color: #fff;
   font-size: 20px;
   cursor: pointer;
-  /* margin: 1rem; */
+  margin-top: 1rem;
   border-radius: 1rem;
   padding: 2rem;
   display: flex;
@@ -68,3 +68,53 @@ opacity: 0.5;
   min-height: 200px;
   min-width: 200px;
 }
+
+.pokemons{
+  padding:0.5rem;
+  cursor: pointer;
+}
+
+.loader{
+  width: 4vmax;
+  height: 4vmax;
+  border-right: 4px solid #090909;
+  border-radius: 100%;
+  animation: spinRight 800ms linear infinite;
+  margin-bottom: 1rem;
+
+}
+  
+.loader:before, .loader:after {
+    content: '';
+    width: 3vmax;
+    height: 3vmax;
+    display: block;
+    position: absolute;
+    top: calc(50% - 1.5vmax);
+    left: calc(50% - 1.5vmax);
+    border-left: 3px solid #635e5e;
+    border-radius: 100%;
+    animation: spinLeft 800ms linear infinite;
+  }
+  
+  .loader:after {
+    width: 2vmax;
+    height: 2vmax;
+    top: calc(50% - 1vmax);
+    left: calc(50% - 1vmax);
+    border: 0;
+    border-right: 2px solid #4c4a4a;
+    animation: none;
+  }
+
+
+@keyframes spinLeft {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(720deg);}
+}
+
+@keyframes spinRight {
+  from {transform:rotate(360deg);}
+  to {transform:rotate(0deg);}
+}
+
