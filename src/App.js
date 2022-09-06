@@ -70,6 +70,7 @@ function App() {
         else if(pokemon?.name?.toLowerCase().startsWith(inpt?.toLowerCase())){
           return pokemon;
         }
+        return null;
         
       })?.map((pokemon,key) => {
         return key<6 && 
